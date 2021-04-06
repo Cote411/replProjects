@@ -1,0 +1,127 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct node
+{
+    string Name;
+    double Feet1;
+    double Inches1;
+    double Feet2;
+    double Inches2;
+    double Feet3;
+    double Inches3;
+    int Score;
+    
+    node *next;
+};
+int contactNum = 0;
+class List
+{
+private:
+    node *head, *tail;
+public:
+    List(){
+        head = NULL;
+        tail = NULL;
+    }
+    void create_jumper(){
+    	for(int i = 1; i < 6; i++){
+        	node *temp = new node;
+    		cout << "\nEnter Jumper#"<<i<< " Name (no Spaces): ";
+    		cin >> temp->Name;
+    		cout << "\nEnter Jump #1 Feet: ";
+    		cin >> temp->Feet1;
+    		cout << "\nEnter Jump #1 Inches:";
+   			cin >> temp->Inches1;
+    		cout << "\nEnter Jump #2 Feet: ";
+    		cin >> temp->Feet2;
+    		cout << "\nEnter Jump #2 Inches:";
+    		cin >> temp->Inches2;
+    		cout << "\nEnter Jump #3 Feet: ";
+    		cin >> temp->Feet3;
+    		cout << "\nEnter Jump #3 Inches:";
+    		cin >> temp->Inches3;
+    		 // create the contact in the linked list
+    		cout << endl;
+   		
+        	contactNum++;
+        	temp->next = NULL;
+        	if (head == NULL)
+        	{
+            	head = temp;
+            	tail = temp;
+            	temp = NULL;
+        	}
+        	else
+        	{
+            	tail->next = temp;
+            	tail = temp;
+        	}
+        }
+    }
+	void PlaceJumper(){
+    	node *temp = new node;
+    	node *current = new node;
+    	node *start = new node;
+    	temp = head;
+    	start = temp;
+    	while(temp!=NULL){
+       		for (int i = 0; i < 3; i++){
+       			if(temp->Feet1 < temp->Feet2){
+       				swap(temp->Feet2, temp->Feet1);
+       				swap(temp->Inches2, temp->Inches1);
+       			}
+       			if(temp->Feet2 < temp->Feet3){
+       				swap(temp->Feet3, temp->Feet2);
+       				swap(temp->Inches3, temp->Inches2);
+       			}
+       		
+       		}
+       		temp= temp->next;
+    	}
+    	for (int j = 0; j < contactNum-1; j++){
+       		temp = start;
+        	for (int i = 0; i < contactNum; i++){
+        		current = temp->next;
+            	if (current!= NULL){
+               		if (temp->Feet1 < current->Feet1){
+               			swap(current->Name, temp->Name);
+                		swap(current->Feet1, temp->Feet1);
+                		swap(current->Inches1, temp->Inches1);
+                		swap(current->Feet2, temp->Feet2);
+                		swap(current->Inches2, temp->Inches2);
+                		swap(current->Feet3, temp->Feet3);
+                		swap(current->Inches3, temp->Inches3);
+                		temp = temp->next;
+                	}
+            	}else{
+                	temp=start;
+                	break;
+                }
+             }
+        }
+		temp = start;
+        temp->Score = temp->Score + 5;
+        temp = temp->next;
+        temp->Score = temp->Score + 3;
+        temp = temp->next;
+        temp->Score = temp->Score + 1;
+        temp = temp->next;
+        temp = start;
+		int num = 1;
+		for(int i = 0; i < contactNum; i++){
+			cout << num << ". " << temp->Name << ": " << temp->Feet1 << "' " << temp->Inches1 << "''  +" << temp->Score;
+			cout << endl;
+			num++;
+			temp=temp->next;
+		}
+	}
+};
+int main(){
+    List Competitors;
+    Competitors.create_jumper();
+    Competitors.PlaceJumper();
+    system("pause");
+    return 0;
+}
