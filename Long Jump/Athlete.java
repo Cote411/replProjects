@@ -53,8 +53,9 @@ class Athlete {
           firstName = studentInfo[0];
           lastName = studentInfo[1];
           idNum = studentInfo[2];
+          teamName = "Feehan ";
           System.out.print("--\n--\n\n");
-          System.out.println(firstName + " " + lastName + " Team: Feehan  ID Number: " + idNum);
+          System.out.println(firstName + " " + lastName + " Team: " + teamName + "  ID Number: " + idNum);
           break;
         }
       }    
