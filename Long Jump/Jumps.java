@@ -2,6 +2,10 @@ import java.util.Scanner;
 
 class Jumps {
 
+
+    Jumps(){
+      Attempt();
+    }
   void Attempt() {
     Scanner myScan = new Scanner(System.in);
     int[] feet = { 0, 0, 0 };

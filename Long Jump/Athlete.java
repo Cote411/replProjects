@@ -34,6 +34,7 @@ class Athlete {
       lastName = myScan.nextLine();
       System.out.print("Enter Jumper Team/School: ");
       teamName = myScan.nextLine();
+      
       System.out.print(firstName + " " + lastName + ", " + teamName + "\n\n");
 
 

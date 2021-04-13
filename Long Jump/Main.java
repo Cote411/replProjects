@@ -22,13 +22,18 @@
 
 */
 
+import java.util.Scanner;
 
 class Main {
   public static void main(String[] args) {
-    
-    Athlete player = new Athlete();
-    Jumps jumper = new Jumps();
-    jumper.Attempt();
+    Scanner myScan = new Scanner(System.in);
+    System.out.print("How many Atheletes will be competing?");
+    int n = myScan.nextInt();
+    for(int i = 0; i < n; i++){
+      Athlete player = new Athlete();
+      Jumps jumper = new Jumps();
+    }
+   
   
 
   }
