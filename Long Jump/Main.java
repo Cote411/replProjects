@@ -26,15 +26,17 @@ import java.util.Scanner;
 
 class Main {
   public static void main(String[] args) {
+    
     Scanner myScan = new Scanner(System.in);
-    System.out.print("How many Atheletes will be competing?");
+    System.out.print("How many Atheletes will be competing?  ");
     int n = myScan.nextInt();
+    Athlete player = new Athlete();
+    Jumps jumper = new Jumps();
     for(int i = 0; i < n; i++){
-      Athlete player = new Athlete();
-      Jumps jumper = new Jumps();
+      player.setData();
+      jumper.Attempt();
+      
     }
-   
-  
-
+    jumper.displayHighestJumps();
   }
 }

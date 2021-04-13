@@ -14,13 +14,10 @@ class Athlete {
   private String[] studentInfo;
 
 
-  Athlete(){
-    setData();
-  }
 
   void setData() {
     Scanner myScan = new Scanner(System.in);
-    System.out.print("Do you have a Feehan id number? Yes or No: ");
+    System.out.print("\n\nDo you have a Feehan id number? Yes or No: ");
     idNumConfirmation = myScan.nextLine();
     if (idNumConfirmation.equals("Yes") || idNumConfirmation.equals("yes")) {
       System.out.print("Enter id Number: ");

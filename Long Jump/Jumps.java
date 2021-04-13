@@ -1,13 +1,13 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 class Jumps {
+  ArrayList allHighest = new ArrayList<>();
 
-
-    Jumps(){
-      Attempt();
-    }
+   
   void Attempt() {
     Scanner myScan = new Scanner(System.in);
+    
     int[] feet = { 0, 0, 0 };
     int[] inches = { 0, 0, 0 };
     double[] highest = new double[2];
@@ -51,8 +51,14 @@ class Jumps {
 
     highest[1] = highest[0] % 12;
 
+    allHighest.add(highest[0]);
     //System.out.print("Highest Jump: " + highest[0] + "' " + (highest[1] + 1) + "'' \n");
     System.out.print("Highest Jump: " + highest[0] + " Feet \n");
+
+  }
+
+  void displayHighestJumps(){
+    System.out.print(allHighest + "\n");
 
   }
 }
