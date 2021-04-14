@@ -1,4 +1,6 @@
-public class DataList {
+import java.util.Iterator;
+
+class ListOfData {
     String firstName;
     String lastName;
     String idNum;
@@ -6,11 +8,12 @@ public class DataList {
     String idNumConfirmation;
     String[] studentInfo;
 
-    public DataList(String inputfirstname, String inputlastname, String inputidnum, String inputteamname){
+    ListOfData(String inputfirstname, String inputlastname, String inputidnum, String inputteamname){
         firstName = inputfirstname;
         lastName = inputlastname;
         idNum = inputidnum;
         teamName = inputteamname;
 
     }
+
 }

@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.FileNotFoundException;
+import java.util.LinkedList;
 
 class Athlete {
   private String firstName;
@@ -55,7 +56,14 @@ class Athlete {
           idNum = studentInfo[2];
           teamName = "Feehan ";
           System.out.print("--\n--\n\n");
-          System.out.println(firstName + " " + lastName + " Team: " + teamName + "  ID Number: " + idNum);
+          //System.out.println(firstName + " " + lastName + " Team: " + teamName + "  ID Number: " + idNum);
+          LinkedList<ListOfData> allInfo = new LinkedList<ListOfData>();
+          ListOfData newData = new ListOfData(firstName, lastName, teamName, idNum);
+          allInfo.add(newData);
+          //for(Object o : allInfo){
+            System.out.println(allInfo.toString());
+         // }
+            
           break;
         }
       }    
