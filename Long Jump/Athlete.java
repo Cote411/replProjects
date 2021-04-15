@@ -61,7 +61,7 @@ class Athlete {
           ListOfData newData = new ListOfData(firstName, lastName, teamName, idNum);
           allInfo.add(newData);
           //for(Object o : allInfo){
-            System.out.println(allInfo.toString());
+            System.out.println(newData);
          // }
             
           break;
