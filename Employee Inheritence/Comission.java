@@ -1,3 +1,3 @@
-public class Comission {
+public class Comission extends Employee{
     
 }

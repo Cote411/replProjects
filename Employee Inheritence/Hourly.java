@@ -1,3 +1,3 @@
-public class Hourly {
+public class Hourly extends Employee{
     
 }
