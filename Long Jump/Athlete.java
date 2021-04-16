@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.FileNotFoundException;
 import java.util.LinkedList;
+import java.util.ArrayList;
 
 class Athlete {
   private String firstName;
@@ -57,11 +58,11 @@ class Athlete {
           teamName = "Feehan ";
           System.out.print("--\n--\n\n");
           //System.out.println(firstName + " " + lastName + " Team: " + teamName + "  ID Number: " + idNum);
-          LinkedList<ListOfData> allInfo = new LinkedList<ListOfData>();
+          ArrayList<ListOfData> allInfo = new ArrayList<ListOfData>();
           ListOfData newData = new ListOfData(firstName, lastName, teamName, idNum);
           allInfo.add(newData);
           //for(Object o : allInfo){
-            System.out.println(newData);
+            System.out.println(allInfo);
          // }
             
           break;
